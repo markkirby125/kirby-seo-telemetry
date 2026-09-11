@@ -10,7 +10,25 @@ If you are flying blind without AI attribution capture, you are fundamentally mi
 
 **The Solution:** The `kirby-seo-telemetry` skill installs the architecture required to capture RAG/LLM mentions, analyze deep Google Search Console (GSC) telemetry, and build conversational ad safeguards. Your AI agent will use these blueprints to fortify your tracking and defend against user pogo-sticking.
 
-## Installation & Usage
-This is a standard AI agent skill (compatible with Antigravity, Cursor, Windsurf).
-1. Copy the `SKILL.md` and `references/` folder into your agent's skills directory.
-2. Trigger the skill by asking your agent about "AI Attribution Capture", "GSC Telemetry", or "Conversational Ads".
+## 🪄 The Magic Prompt
+
+Copy and paste this directly to your AI (Cursor, Windsurf, Claude Code, Antigravity):
+
+```markdown
+@agent Please install the kirby-seo-telemetry skill into this workspace.
+1. Read the `SKILL.md` file and `references/` directory from this repository: https://github.com/markkirby125/kirby-seo-telemetry
+2. Identify the correct rules system for our current environment (e.g., `.cursor/rules/` for Cursor, `.windsurfrules` for Windsurf, `.clinerules` for Cline, or `~/.agents/skills/` for Antigravity).
+3. Save the contents appropriately. If our environment supports multi-file dispatcher skills, clone the directory structure exactly.
+4. Confirm when the installation is complete.
+```
+
+## Manual Installation
+
+- **Cursor**: Save `SKILL.md` to `.cursor/rules/kirby-seo-telemetry.mdc` and copy `references/`
+- **Windsurf**: Save `SKILL.md` to `.windsurfrules` and copy `references/`
+- **Antigravity**: Clone this repository directly into `~/.agents/skills/kirby-seo-telemetry`
+
+## Tech Stack
+
+- **Format**: Markdown / YAML
+- **Compatibility**: Antigravity, Claude Code, Cursor, Windsurf, Cline
