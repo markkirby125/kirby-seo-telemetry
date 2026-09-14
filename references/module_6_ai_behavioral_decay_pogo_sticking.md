@@ -1,6 +1,6 @@
 # Module 6: The AI Behavioral Decay Mechanism (Pogo-Sticking at Scale)
 
-*Source: YouTube Video 2Al_GYBMVmg*
+*Source: Edward Sturm / The Edward Show, Episode 1167*
 
 ### **6.1 The Presentation Intent & Pogo-Sticking**
 Search intent is fundamentally about **presentation**, not just topic coverage. When a searcher lands on a page, they expect an immediate resolution to their intent. If the answer is buried beneath filler content (e.g., decorative "eyebrows", repeated headings, bloated intros), the user will immediately bounce back to the search results (pogo-sticking).
