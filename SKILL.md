@@ -17,3 +17,4 @@ This skill handles Attribution Tracking & Conversational Ad Architectures.
 - You are analyzing Google Search Console (GSC) telemetry or AI attribution.
 - You are setting up conversational ad architectures or dealing with pogo-sticking defense.
 - You are harvesting zero-volume `[Keyword] + Reddit` modifiers from GSC (measurement only; page construction is `kirby-off-page-seo` Module 13).
+- You are scoring **publisher** URLs for AI retrievals/citations before a listicle buy (measurement only; outreach and pricing are `kirby-off-page-seo` Module 18). Include high-retrieval URLs that are not Google top-10.
