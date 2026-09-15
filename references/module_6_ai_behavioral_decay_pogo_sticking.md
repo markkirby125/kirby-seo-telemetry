@@ -10,4 +10,12 @@ Pogo-sticking is a catastrophic negative behavioral signal. Historically, Google
 
 However, AI generation allows publishers to scale this structural flaw (e.g., deploying the identical "ultimate guide" template structure) across hundreds or thousands of pages simultaneously. When this occurs, the domain compounds bad behavioral signals much faster than a normal site. This rapid accumulation of negative telemetry triggers steep, algorithmic demotions that outpace traditional SEO penalties.
 
-*For the specific copywriting execution required to fix this (Sentence One Resolution, single-CTA discipline, and density rules), refer to `kirby-direct-response-copywriting/references/module_7_seo_copywriting_integrations.md`.*
+*For copywriting execution (BLUF / Sentence One Resolution, single-CTA discipline, and density rules), read `kirby-direct-response-copywriting/SKILL.md` Module 7.3. Do not look for a `references/` file in that skill.*
+
+### **6.3 Measurement Checklist**
+Track behavioral decay in first-party telemetry. Do not infer it from copy alone.
+
+- [ ] **GSC (28-day window):** flag BOFU URLs whose CTR drops vs. the site baseline after publish or template refresh, despite stable impressions.
+- [ ] **Analytics:** flag entrances with <10s engagement or immediate back-to-SERP (pogo) on those URLs.
+- [ ] **Threshold:** if a shared template family is elevated vs. the rest of the site, stop further publishes of that template until Module 7.3 density rules are applied.
+- [ ] Record the template ID, URL set, and date the decay started so later deploys can be compared.
