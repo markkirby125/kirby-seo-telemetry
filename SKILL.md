@@ -2,7 +2,7 @@
 name: kirby-seo-telemetry
 description: "Use when dealing with AI attribution capture, Google Search Console telemetry, GSC coverage hygiene, Google Ads bidding safeguards, and pogo-sticking defense."
 category: technique
-triggers: [seo-attribution, analytics, conversational-ads, gsc-telemetry, pogo-sticking, reddit-gsc, gsc-coverage, crawled-not-indexed, discovered-not-indexed, template-fail-rate]
+triggers: [seo-attribution, analytics, conversational-ads, gsc-telemetry, pogo-sticking, reddit-gsc, gsc-coverage, template-fail-rate]
 ---
 # Kirby SEO Telemetry & Ad Architectures
 

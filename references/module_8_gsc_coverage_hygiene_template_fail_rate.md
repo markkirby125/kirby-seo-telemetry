@@ -20,10 +20,10 @@ Coverage charts for a rewritten class often move in **steps**, not slopes. A ste
 
 ## 8.2 Two statuses, two gauges
 
-| Gauge | Read as | Healthy pattern |
+| Gauge | Read as | How to read it |
 |---|---|---|
-| `Crawled - currently not indexed` on the intended class | Page-level keep verdicts | Failures confined to a known template; junk already excluded |
-| `Discovered - currently not indexed` | Crawl demand / whether Google still bothers to look | Low and stable on a site that is still being recrawled |
+| `Crawled - currently not indexed` on the intended class | Page-level keep verdicts | After junk is excluded, remaining fails are a template/page problem — not proof the domain is healthy. Core 30 / location class still targets high-90s indexation (`kirby-aiseo-skill` §2.8). |
+| `Discovered - currently not indexed` | Crawl demand / whether Google still bothers to look | Low and stable means Google is still fetching. Rising means demand is dropping. |
 
 Low `Discovered` + `Crawled` confined to one template: the **site** is still interesting; those **pages** are the problem. Rising `Discovered` while `Crawled` is an old pile: crawl demand is dropping — do not treat it as a copy rewrite (`kirby-aiseo-skill` §1.16).
 
@@ -34,7 +34,7 @@ Group unindexed URLs by **what produced them** (prompt, build sheet, brief, gene
 * **Level** is noise. A template that sits steady at ~8% unindexed is not an alarm by itself.
 * **Slope** is the signal. The same template jumping to ~40% after a process change means that change made it worse — **before** rankings move.
 
-Indexation is a **floor** (`kirby-aiseo-skill` Executive Threat Profile and §1.16). A clean coverage report does not pass §2.32B.
+Indexation is a **floor** (`kirby-aiseo-skill` Executive Threat Profile and §1.16). A clean coverage report does not pass `kirby-aiseo-skill` §2.32B.
 
 **GSC Coverage Hygiene Checklist**
 - [ ] Split `Crawled` vs `Discovered` before interpreting the coverage report.
