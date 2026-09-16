@@ -2,7 +2,7 @@
 name: kirby-seo-telemetry
 description: "Use when dealing with AI attribution capture, Google Search Console telemetry, GSC coverage hygiene, Google Ads bidding safeguards, and pogo-sticking defense."
 category: technique
-triggers: [seo-attribution, analytics, conversational-ads, gsc-telemetry, pogo-sticking, reddit-gsc, gsc-coverage, template-fail-rate, preferred-source-tracking]
+triggers: [seo-attribution, analytics, conversational-ads, gsc-telemetry, pogo-sticking, reddit-gsc, gsc-coverage, template-fail-rate, preferred-source-tracking, gsc-striking-distance, 1-hour-telemetry]
 ---
 # Kirby SEO Telemetry & Ad Architectures
 
@@ -16,6 +16,7 @@ This skill handles Attribution Tracking & Conversational Ad Architectures.
 
 ## When to Use
 - You are analyzing Google Search Console (GSC) telemetry or AI attribution.
+- You are filtering GSC queries for the 1-Hour SEO Update across striking distance (Pos 5–20) and latent authority (Pos 20–50) to flag undertargeted queries (Module 5 §5.15; on-page execution is `kirby-aiseo-skill` §2.19).
 - You are measuring `Crawled` vs `Discovered` not-indexed counts, stripping junk from the coverage denominator, or tracking fail-rate slope per template (Module 8; do not rewrite pages here — `kirby-aiseo-skill` §1.16).
 - You are setting up conversational ad architectures or dealing with pogo-sticking defense.
 - You are harvesting zero-volume `[Keyword] + Reddit` modifiers from GSC (measurement only; page construction is `kirby-off-page-seo` Module 13).

@@ -463,3 +463,54 @@ Search engine re-ranking models (NavBoost and RankEmbed BERT, §5.7) evaluate pa
 - [ ] Verify above-the-fold content immediately satisfies primary query intent to eliminate "Alternative-Seeking Returns" in SERP telemetry.
 
 ---
+
+### **5.15 The 1-Hour SEO Update Telemetry Protocol: GSC Striking Distance & Latent Association Filtering**
+
+*Source: Edward Sturm podcast Episodes 1,114 & 1,169. September 2026.*
+
+Extracting latent search demand from Google Search Console requires structured telemetry filtering to isolate high-impression queries that an existing URL partially satisfies but fundamentally undertargets.
+
+#### A. Telemetry Extraction Parameters
+Query the Google Search Console Search Analytics API (or export 90-day page-query performance datasets) using two strict telemetry filters:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│             GSC 1-HOUR UPDATE TELEMETRY EXTRACTION MATRIX              │
+├───────────────────┬──────────────────┬──────────────────┬──────────────┤
+│ Cohort Tier       │ Position Range   │ Impression Floor │ Target CTR   │
+├───────────────────┼──────────────────┼──────────────────┼──────────────┤
+│ Striking Distance │ Pos 5.0 to 20.0  │ ≥ 100 impr / 90d │ < 3.0% CTR   │
+│ Latent Authority  │ Pos 20.1 to 50.0 │ ≥ 50 impr / 90d  │ Any          │
+└───────────────────┴──────────────────┴──────────────────┴──────────────┘
+```
+
+1. **Striking Distance Cohort (Positions 5.0 to 20.0):** Pages sitting on page 1–2 of Google. The URL is receiving search impressions for queries it currently fails to answer directly above the fold.
+2. **Latent Authority Cohort (Positions 20.1 to 50.0 / Pages 3–5):** Queries where Google's semantic index has already associated the URL with the topic, despite the absence of intentional optimization. Pushing a page from position 45 to position 15 requires a fraction of the crawl and link equity of ranking a new page from scratch.
+
+#### B. The Automated DOM Undertargeting Audit (Flagging Opportunities)
+Once the query list is exported for a URL, execute an automated DOM comparison:
+```python
+# Pseudo-telemetry logic for Undertargeted Flag
+def audit_undertargeting(page_dom, gsc_query):
+    in_title = gsc_query.lower() in page_dom.title.lower()
+    in_h1 = any(gsc_query.lower() in h1.text.lower() for h1 in page_dom.find_all('h1'))
+    in_sentence1 = gsc_query.lower() in page_dom.get_first_sentence().lower()
+    
+    if not in_title and not in_h1:
+        return "UNDERTARGETED_OPPORTUNITY"
+    return "ALREADY_TARGETED"
+```
+* **The Flag Criteria:** If a query generates $\ge 100$ impressions but has zero matches in the `<title>` and `<h1>`, it is flagged as an `UNDERTARGETED_OPPORTUNITY`.
+
+#### C. Architectural Seam: Telemetry-to-Execution Handoff
+* **Telemetry Responsibility (This Skill):** Extract the data, apply the position/impression gates, run the DOM match audit, and produce the structured matrix:
+  `[Target_URL, Latent_Query, 90d_Impressions, Avg_Position, Current_CTR, Undertargeted_Status]`
+* **Execution Boundary:** Pass the output payload directly to [`kirby-aiseo-skill`](../../kirby-aiseo-skill/references/module_2_on_page_semantic_architecture_content_engineering.md) Section 2.19 & Section 2.29 for on-page injection into the top 4 anchor spots. **Do not rewrite copy or HTML tags in this telemetry skill.**
+
+**1-Hour SEO Telemetry Checklist**
+- [ ] Connect to GSC API or export 90-day search performance per URL.
+- [ ] Run Striking Distance filter (Pos 5.0–20.0, Impr $\ge 100$, CTR $<3\%$).
+- [ ] Run Latent Authority filter (Pos 20.1–50.0, Impr $\ge 50$).
+- [ ] Compare query strings against current page `<title>` and `<h1>` elements.
+- [ ] Flag all high-impression queries with 0 Title/H1 occurrences as `UNDERTARGETED_OPPORTUNITY`.
+- [ ] Dispatch clean payload to `kirby-aiseo-skill` §2.19 for on-page injection.
