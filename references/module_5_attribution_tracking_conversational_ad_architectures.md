@@ -488,29 +488,33 @@ Query the Google Search Console Search Analytics API (or export 90-day page-quer
 2. **Latent Authority Cohort (Positions 20.1 to 50.0 / Pages 3–5):** Queries where Google's semantic index has already associated the URL with the topic, despite the absence of intentional optimization. Pushing a page from position 45 to position 15 requires a fraction of the crawl and link equity of ranking a new page from scratch.
 
 #### B. The Automated DOM Undertargeting Audit (Flagging Opportunities)
-Once the query list is exported for a URL, execute an automated DOM comparison:
+Once the query list is exported for a URL, execute an automated DOM comparison across the 4 anchor spots:
 ```python
-# Pseudo-telemetry logic for Undertargeted Flag
-def audit_undertargeting(page_dom, gsc_query):
-    in_title = gsc_query.lower() in page_dom.title.lower()
-    in_h1 = any(gsc_query.lower() in h1.text.lower() for h1 in page_dom.find_all('h1'))
-    in_sentence1 = gsc_query.lower() in page_dom.get_first_sentence().lower()
+# Pseudo-telemetry logic for Undertargeted Flag across 4 anchor spots
+def audit_undertargeting(page_dom, page_url, gsc_query):
+    query = gsc_query.lower()
+    in_title = query in page_dom.title.lower() if page_dom.title else False
+    in_slug = query.replace(" ", "-") in page_url.lower()
+    in_h1 = any(query in h1.text.lower() for h1 in page_dom.find_all('h1'))
+    in_sentence1 = query in page_dom.get_first_sentence().lower()
     
-    if not in_title and not in_h1:
+    # Flag as undertargeted if query is absent from Title or H1, or missing from >=2 of the 4 spots
+    spots_matched = sum([in_title, in_slug, in_h1, in_sentence1])
+    if spots_matched <= 2 or (not in_title and not in_h1):
         return "UNDERTARGETED_OPPORTUNITY"
     return "ALREADY_TARGETED"
 ```
-* **The Flag Criteria:** If a query generates $\ge 100$ impressions but has zero matches in the `<title>` and `<h1>`, it is flagged as an `UNDERTARGETED_OPPORTUNITY`.
+* **The Flag Criteria:** If a query generates $\ge 100$ impressions but matches $\le 2$ of the 4 spots (or is missing entirely from `<title>` and `<h1>`), it is flagged as an `UNDERTARGETED_OPPORTUNITY`.
 
 #### C. Architectural Seam: Telemetry-to-Execution Handoff
-* **Telemetry Responsibility (This Skill):** Extract the data, apply the position/impression gates, run the DOM match audit, and produce the structured matrix:
+* **Telemetry Responsibility (This Skill):** Extract the data, apply the position/impression gates, run the DOM match audit across the 4 anchor spots, and produce the structured matrix:
   `[Target_URL, Latent_Query, 90d_Impressions, Avg_Position, Current_CTR, Undertargeted_Status]`
-* **Execution Boundary:** Pass the output payload directly to [`kirby-aiseo-skill`](../../kirby-aiseo-skill/references/module_2_on_page_semantic_architecture_content_engineering.md) Section 2.19 & Section 2.29 for on-page injection into the top 4 anchor spots. **Do not rewrite copy or HTML tags in this telemetry skill.**
+* **Execution Boundary:** Pass the output payload directly to `kirby-aiseo-skill` Module 2 (§2.19 & §2.29) for on-page injection into the top 4 anchor spots. **Do not rewrite copy or HTML tags in this telemetry skill.**
 
 **1-Hour SEO Telemetry Checklist**
 - [ ] Connect to GSC API or export 90-day search performance per URL.
 - [ ] Run Striking Distance filter (Pos 5.0–20.0, Impr $\ge 100$, CTR $<3\%$).
 - [ ] Run Latent Authority filter (Pos 20.1–50.0, Impr $\ge 50$).
-- [ ] Compare query strings against current page `<title>` and `<h1>` elements.
-- [ ] Flag all high-impression queries with 0 Title/H1 occurrences as `UNDERTARGETED_OPPORTUNITY`.
+- [ ] Compare query strings against current page 4 anchor spots (`<title>`, URL slug, `<h1>`, first sentence hook).
+- [ ] Flag all high-impression queries failing the 4-spot check as `UNDERTARGETED_OPPORTUNITY`.
 - [ ] Dispatch clean payload to `kirby-aiseo-skill` §2.19 for on-page injection.
