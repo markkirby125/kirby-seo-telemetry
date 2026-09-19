@@ -170,12 +170,22 @@ The operationally sound alternative is **topic-cluster visibility tracking**:
 Modern web searchers behave like video gamers: they refuse to read instruction manuals or parse dense paragraphs of text to determine whether a service fits their needs.
 
 * **The Root Cause of Pogo-Sticking:** Even when the `<h1>` matches the query, if a user lands on a page and must read 200 words of copy to verify *what* the service actually is and *how* it is delivered, they bounce back to the search results ("pogo-sticking").
-* **The Core Law:** **The hero section must achieve complete intent satiation visually, requiring zero reading from the visitor.**
+* **The Core Law (Scope-Bounded):** **The hero section must achieve complete intent satiation within 1–2 seconds, requiring zero *paragraph* reading from the visitor.** This law is scoped to **Local Trades, Physical Services, and Real-World Technical Work**, where authentic in-situ work photography instantly confirms both *what* the service is and *how* it is delivered — one glance does what 200 words cannot. It does **not** license offloading the value proposition onto imagery for every business model. Applying it outside that scope produces the P0 defect documented in §B.2.
 
-#### B. The Visual Satiation Standard
-The above-the-fold visual asset must communicate the full value proposition within 1–2 seconds:
-1. **Local Trades & Technical Services:** Display an authentic, high-contrast photo of the technician or trade actively performing the service in-situ (e.g., plasterer actively applying a multi-finish coat, network engineer configuring a rack server). Avoid staged handshakes, sterile stock business suits, or generic tools resting on a table. **Prohibit animated hero images or auto-playing videos**, as they bloat load times and create cognitive friction. Use a fixed, high-quality image instead.
-2. **Software & Digital Products:** Display a composite UI screenshot displaying the specific use case actively solved in the product dashboard with real data, eliminating user guesswork about what the application looks like.
+#### B. The Visual Satiation Standard — Two Branches
+The above-the-fold region must communicate the full value proposition within 1–2 seconds. **What carries that message differs by business model, and applying the wrong branch is a P0 conversion defect.** Select the branch before auditing any hero.
+
+1. **Local Trades, Physical Services & Real-World Technical Work — Visual-First:** Display an authentic, high-contrast photo of the technician or trade actively performing the service in-situ (e.g., plasterer actively applying a multi-finish coat, network engineer configuring a rack server). Authentic in-situ work photography functions as a *capability proof*: it confirms in a single glance that the trade is real, equipped, and already executing the exact job the visitor needs. Avoid staged handshakes, sterile stock business suits, or generic tools resting on a table. **Prohibit animated hero images or auto-playing videos**, as they bloat load times and create cognitive friction. Use a fixed, high-quality image instead.
+
+2. **Software, SaaS, Digital Products & Complex Workflows — Text-First Hero & Typographic Visual Carrier:**
+
+   > **🚫 ANTI-PATTERN (BANNED) — THE "SAAS DASHBOARD TRAP":** *"Display a composite UI screenshot displaying the specific use case actively solved in the product dashboard with real data, eliminating user guesswork about what the application looks like."* This is prohibited. A dashboard screenshot in the hero forces an uninitiated visitor to parse navigation rails, tables, metric widgets, filter chrome, and chart legends *before* they understand what the product does. To a prospect who has never opened the tool, that UI does not read as "capability" — it reads as **complexity, configuration burden, and a steep learning curve**, and it actively distracts from the pain being solved. It answers a question the visitor has not asked yet (*"what does it look like inside?"*) while leaving the question they *did* ask (*"will this fix my problem, and how long until it works?"*) unanswered — so they pogo-stick.
+
+   **Mandate — the "Text-First Hero & Typographic Visual Carrier" approach:**
+   * **Typography does the heavy lifting.** A short, declarative `<h1>` stating the *outcome* (not the product category) is the hero asset. Crisp, customer-centric copy is the primary carrier of the value proposition — not a screenshot.
+   * **Headline contrast stages the reading hierarchy.** Size, weight and colour contrast between the `<h1>` and the subhead create a single 1–2 second scan path: outcome → mechanism → proof. The visitor's eye is *directed* down a deliberate hierarchy instead of left to wander a UI screenshot.
+   * **The subhead immediately demolishes the primary objection.** The subhead must name and kill the top friction the prospect is silently raising — **time to value** ("live in 10 minutes, no implementation project"), **manual effort** ("syncs automatically — zero copy-paste"), or **learning curve** ("no training required, nothing to install"). Objection demolition is the job the dashboard screenshot pretends to do and cannot.
+   * **Visuals must pass the "Amplification vs. Decoration" test.** Any visual placed in the hero must **amplify** a claim the copy already makes — demonstrating the specific mechanism, the proof artifact, or a before/after state — rather than merely **decorate** the layout or fill space. A visual that survives only because "the hero looked empty" fails the test and must be cut. Cropped single-interaction close-ups and outcome artifacts may pass; a full multi-panel product UI does not. Apply the test exactly as specified in `../../kirby-text-first-cro/SKILL.md`.
 
 #### C. The Dual-CTA Skimmer Architecture & Above-the-Fold Social Proof
 Searchers divide into immediate converters and visual skimmers. Implement a dual-anchor conversion framework:
@@ -190,11 +200,13 @@ Searchers divide into immediate converters and visual skimmers. Implement a dual
 **Title Tag & Visual Satiation Checklist**
 - [ ] Format all transactional page titles: `[Keyword] | [Benefit/Goal] | [Brand Name]`.
 - [ ] Inject a friction-killer modifier (`£0 Call-Out`, `Free Tier`, `Same-Day SLA`) into Part 2 of title tags.
-- [ ] Audit above-the-fold viewport: verify the hero image explains the service in 1–2 seconds with zero copy reading required.
-- [ ] **Verify Hero Asset:** Ensure the hero image is static (no animated GIFs or autoplay backgrounds).
+- [ ] Audit above-the-fold viewport: verify the hero explains the service in 1–2 seconds with zero paragraph reading required, using the branch that matches the business model (§5.5.1B).
+- [ ] **Verify Hero Asset — Local Trades branch:** For Local Trades, Physical Services & Real-World Technical Work, confirm the hero image shows authentic in-situ work actively being performed — real technician, real job, zero stock fluff (no handshakes, no business suits, no idle tools on a table).
+- [ ] **Verify Hero Asset — SaaS/Digital branch:** For Software, SaaS, Digital Products & Complex Workflows, confirm the hero uses a clean text-first typographic hierarchy with customer-first ("you") framing and a subhead that immediately demolishes the primary objection (time to value, manual effort, or learning curve) — with **no dashboard screenshot, table, or metric widget above the fold**.
+- [ ] **Verify Hero Asset — both branches:** Ensure any hero visual is static (no animated GIFs or autoplay backgrounds) and passes the "Amplification vs. Decoration" test (`../../kirby-text-first-cro/SKILL.md`).
 - [ ] **Verify Testimonials:** Position video testimonials high up the page for immediate social proof, but ensure autoplay is disabled.
 - [ ] Deploy Dual-CTA layout: primary conversion action in initial viewport, secondary CTA at page terminal base.
-- [ ] Audit site content for text-heavy walls: replace conceptual exposition with authentic in-situ work photos or UI walkthroughs.
+- [ ] Audit site content for text-heavy walls — two branches: for Local Trades, replace conceptual exposition with authentic in-situ work photos; for SaaS/Digital, replace it with a text-first typographic hierarchy, customer-first ("you") framing, and objection-demolishing subheads. Deploy any UI walkthrough deeper in the page as a mid-funnel artifact — never above the fold.
 - [ ] Replace all vague "platitudes" (e.g., "Experience the difference") with concrete track-record statistics.
 
 ---
