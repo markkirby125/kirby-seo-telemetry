@@ -20,3 +20,5 @@ This skill handles Attribution Tracking & Conversational Ad Architectures.
 - You are harvesting zero-volume `[Keyword] + Reddit` modifiers from GSC (measurement only; page construction is `../../kirby-off-page-seo/SKILL.md` Module 13).
 - You are scoring **publisher** URLs for AI retrievals/citations before a listicle buy (measurement only; outreach and pricing are `../../kirby-off-page-seo/SKILL.md` Module 18). Include high-retrieval URLs that are not Google top-10.
 - You are tracking Google Preferred Source opt-in events (`preferred_source_optin`), 2x CTR lift attribution, or GSC AI Overview correlation: route to `../../kirby-preferred-sources/SKILL.md` Module 4.
+- For net-new target keywords lacking GSC impression history, internal authority discovery is the search operator harvest in `../../kirby-aiseo-skill/SKILL.md` §10.11 — telemetry tools only measure queries where impressions already register.
+
