@@ -83,6 +83,19 @@ Editorial media drives **61% of AI search citations** (vs. 44% from brand websit
 * **Holiday / Absence Coverage:** Any planned absence of ≥5 business days must be covered via call forwarding or an external answering service to prevent NavBoost demotion accumulation.
 * **Missed Call Recovery:** Implement same-day SMS or email callback protocols for all missed local search calls to aggressively mitigate goal-completion failure signals.
 
+*Source: Caleb Ulku ("How To Stop Being Invisible On Google"). September 2026.*
+
+#### The Goal Completion Incumbent Shield
+Sustained positive goal completion over years creates a durable algorithmic moat that insulates incumbent listings from review-volume challengers.
+* **The Empirical Pattern:** In the Houston pest control market, a local incumbent (Houston Pest Control) sustains a #1 map pack ranking with only 232 reviews, defending against heavily funded competitors like Berrett (#3, 8,500 reviews) and Aptive (#18, 10,000 reviews). Review velocity cannot override historical goal completion fidelity.
+* **The Challenger Strategy:** To erode the incumbent's historical advantage, challengers must deploy a flawless "speed-to-lead" operation: 100% call resolution and systematic elimination of all local ping-ponging signals. This requires rigorous adherence to the **Minimum Phone Pickup Rate** and **Holiday / Absence Coverage** standards detailed above.
+
+#### DNI NAP Discrepancy Telemetry Check
+Dynamic Number Insertion (DNI) or legacy call tracking can silently break local entity consistency if misconfigured.
+* **The Observed Failure:** Natran's Houston location page was observed displaying a local phone number (281-xxx) that mismatched the primary number on their GBP listing (1246-xxx). This discrepancy fractures the entity graph.
+* **Mandatory Audit:** A mandatory pre-launch and periodic audit must verify that the primary GBP phone number identically matches the website's organically displayed phone number, including any call tracking or DNI overlays.
+* **Cross-Reference:** Adhere to the GBP Loop Mirroring Doctrine detailed in `kirby-local-seo` Module 6 §6.3 to ensure absolute NAP consistency across the entity footprint.
+
 > **⚠ RANKING RISK:** Failure to enforce the Operational Goal Completion SLA will result in rapid NavBoost demotion. Sustained local "ping-ponging" from unhandled calls actively degrades map-pack visibility within a 14-day rolling window, counteracting all on-page and off-page optimisation efforts.
 
 ---
