@@ -90,19 +90,19 @@ To achieve near-100% pickup rates and sub-8-second latency across local lead gen
 3. **Missed-Call Instant Recovery Webhook:** If a call goes unanswered after 16 seconds (~4 rings):
    * Telemetry logs a `call_abandoned` event.
    * Automated SMS dispatch triggers within 30 seconds: *"Sorry we missed your call! Are you experiencing an emergency? Reply here for immediate dispatch."*
-   * This halts the user's return to the Google Map Pack, defending against the local pogo-sticking penalty (`../../kirby-seo-telemetry/SKILL.md` Module 6).
+   * This halts the user's return to the Google Map Pack, defending against the local pogo-sticking penalty (`./module_6_ai_behavioral_decay_pogo_sticking.md`).
 
 ---
 
-### **10.4 24-Hour GSC Impression Telemetry & `site:` Keyword Cannibalization Diagnostic Protocol**
+### **10.4 Trailing GSC Impression Telemetry & `site:` Keyword Cannibalization Diagnostic Protocol**
 
 When local service sites scale location or category subpages, granular subfolder expansion risks triggering internal keyword cannibalization.
 
-#### A. Trailing 24-Hour GSC Impression Telemetry
-* **Detection Rule:** Query Google Search Console API for exact target local queries (e.g., `"landscape design Austin"`) over the trailing 24-hour window.
-* **Cannibalization Signal:** If GSC surfaces 2 or more URLs generating impressions for the exact same local search term within 24 hours, active page-level keyword cannibalization is occurring.
+#### A. Trailing GSC Impression Telemetry
+* **Detection Rule:** Query Google Search Console API for exact target local queries (e.g., `"landscape design Austin"`) across the most recent reporting window (accounting for GSC's 24–48h processing lag).
+* **Cannibalization Signal:** If GSC surfaces 2 or more distinct URLs generating impressions for the exact same localized commercial search term within a single reporting window, active page-level keyword cannibalization is occurring.
 
-#### B. The `site:` Operator Verification Test
+#### B. Real-Time `site:` Operator Verification Test
 * **Diagnostic Execution:** Run a targeted site search for the specific local commercial query:
   `site:yourdomain.com "service name" "target city"`
 * **Evaluation:**
