@@ -99,8 +99,8 @@ To achieve near-100% pickup rates and sub-8-second latency across local lead gen
 When local service sites scale location or category subpages, granular subfolder expansion risks triggering internal keyword cannibalization.
 
 #### A. Trailing GSC Impression Telemetry
-* **Detection Rule:** Query Google Search Console API for exact target local queries (e.g., `"landscape design Austin"`) across the most recent reporting window (accounting for GSC's 24–48h processing lag).
-* **Cannibalization Signal:** If GSC surfaces 2 or more distinct URLs generating impressions for the exact same localized commercial search term within a single reporting window, active page-level keyword cannibalization is occurring.
+* **Detection Rule:** In Google Search Console, filter exact target local queries (e.g., `"landscape design Austin"`) over the last 24 hours, then check the Pages tab for the query. Most recent days can be incomplete, so confirm any hit against a 7-day window before acting.
+* **Cannibalization Signal:** If more than one distinct URL ranks for the same exact localized commercial query, treat it as a cannibalization candidate. Hub-plus-money-page pairs can be intentional, so confirm with the `site:` test below before consolidating.
 
 #### B. Real-Time `site:` Operator Verification Test
 * **Diagnostic Execution:** Run a targeted site search for the specific local commercial query:
