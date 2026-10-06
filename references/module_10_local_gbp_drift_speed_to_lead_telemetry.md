@@ -94,19 +94,24 @@ To achieve near-100% pickup rates and sub-8-second latency across local lead gen
 
 ---
 
-### **10.4 Trailing GSC Impression Telemetry & `site:` Keyword Cannibalization Diagnostic Protocol**
+### **10.4 Trailing GSC Impression Telemetry & Site-Search Cannibalization Diagnostic**
 
 When local service sites scale location or category subpages, granular subfolder expansion risks triggering internal keyword cannibalization.
 
-#### A. Trailing GSC Impression Telemetry
-* **Detection Rule:** In Google Search Console, filter exact target local queries (e.g., `"landscape design Austin"`) over the last 24 hours, then check the Pages tab for the query. Most recent days can be incomplete, so confirm any hit against a 7-day window before acting.
-* **Cannibalization Signal:** If more than one distinct URL ranks for the same exact localized commercial query, treat it as a cannibalization candidate. Hub-plus-money-page pairs can be intentional, so confirm with the `site:` test below before consolidating.
+#### A. GSC Query Check
+* **Detection Rule:** In Google Search Console, filter exact target local queries (e.g., `"landscape design Austin"`) over the last 24 hours, then check the Pages tab for the query. Recent days can be incomplete, so confirm any hit against a 7-day window before acting.
+* **Cannibalization Signal:** If more than one distinct URL ranks for the same exact localized commercial query, treat it as a cannibalization candidate. Hub-plus-money-page pairs can be intentional, so confirm with the site-search test below before consolidating.
 
-#### B. Real-Time `site:` Operator Verification Test
-* **Diagnostic Execution:** Run a targeted site search for the specific local commercial query:
-  `site:yourdomain.com "service name" "target city"`
+#### B. Site-Search Verification Test
+* **Diagnostic Execution:** Run a targeted site search for the specific local commercial query. `site:` results are a rough index view, not a precise ranking, so use them as a directional check only:
+
+  ```text
+  site:yourdomain.com "service name" "target city"
+  ```
+
 * **Evaluation:**
-  * **Normal State:** The primary dedicated service page (`/services/landscape-design-austin`) ranks #1 in the site search result.
-  * **Cannibalization Failure State:** A generic blog post, state overview page, or FAQ page outranks the primary local service page.
+  * **Expected State:** The primary dedicated service page (`/services/landscape-design-austin`) appears at or near the top.
+  * **Cannibalization Signal:** A generic blog post, state overview page, or FAQ page appears above the primary local service page.
 * **Remediation Protocol:** Consolidate intent by pruning redundant blog posts, redirecting competing doorway pages, and enforcing strict canonical tag targeting to the primary money page.
 
+*Source: The David Quaid SEO Show, Ep. 8 (Jake Hanley × David Quaid). Related `site:` harvesting for new keywords is in `../../kirby-aiseo-skill/SKILL.md` §10.11.*
