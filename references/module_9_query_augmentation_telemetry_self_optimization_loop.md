@@ -2,7 +2,7 @@
 
 *Source: Edward Sturm × James Dooley (Ep. 1,171, "Query Augmentation: How One Page Ranks for Thousands of Keywords"). September 2026.*
 
-**Measurement only.** This module detects, gates, scores, and packages telemetry. It does not author copy, rewrite `<h2>`s, edit `<title>` tags, or publish. Execution seams: query write-back is `kirby-aiseo-skill` §2.36F; anchor-spot injection is `kirby-aiseo-skill` §2.19; snippet answer syntax is `kirby-aiseo-skill` §2.22B; title-tag click-pull is `kirby-aiseo-skill` §2.18C. Publishing velocity and staging law is `kirby-seo-deployment` Module 7 (§7.11).
+**Measurement only.** This module detects, gates, scores, and packages telemetry. It does not author copy, rewrite `<h2>`s, edit `<title>` tags, or publish. Execution seams: query write-back is `kirby-aiseo-skill` §2.36F; anchor-spot injection is `kirby-aiseo-skill` §2.19; snippet answer syntax is `kirby-aiseo-skill` §2.22B; title-tag click-pull is `kirby-aiseo-skill` §2.18C. Publishing velocity and staging law is `kirby-seo-deployment` Module 7 (§7.14).
 
 ---
 
@@ -166,7 +166,7 @@ Snippet rewrites must be isolated from every other movement in the same window. 
 This is not a preference about workflow quality. A self-optimizing loop with production write access is a runaway optimizer pointed at a proxy metric:
 
 * **Recursive drift.** Each cycle rewrites the passage the previous cycle produced, scoring itself against the metric it just moved. Successive mutations flatten genuine intent coverage into CTR-shaped filler, and the page slowly stops satisfying the query it still ranks for.
-* **Site-wide quality exposure.** The velocity and structure of autonomous mutations are exactly the signal set that triggers Scaled Content Abuse and behavioral demotion. Runaway publishing penalties are sitewide, so per-page gains are paid for by the whole domain — read `kirby-seo-deployment` Module 7 §7.11 (Runaway Publishing Penalty) at [`../../kirby-seo-deployment/SKILL.md`](../../kirby-seo-deployment/SKILL.md). Do not invent a second velocity policy here.
+* **Site-wide quality exposure.** The velocity and structure of autonomous mutations are exactly the signal set that triggers Scaled Content Abuse and behavioral demotion. Runaway publishing penalties are sitewide, so per-page gains are paid for by the whole domain — read `kirby-seo-deployment` Module 7 §7.14 (Runaway Publishing Penalty) at [`../../kirby-seo-deployment/SKILL.md`](../../kirby-seo-deployment/SKILL.md). Do not invent a second velocity policy here.
 * **Credential scope.** GSC telemetry is a **read-only** input. Agents wired to SEO APIs must hold read-scoped credentials and must never hold CMS publish rights — audit that wiring against `kirby-agent-security` at [`../../kirby-agent-security/SKILL.md`](../../kirby-agent-security/SKILL.md) before any agent is connected to GSC, Ahrefs, or SEMrush data.
 
 ### B. Permission Matrix
@@ -225,7 +225,7 @@ This is not a preference about workflow quality. A self-optimizing loop with pro
 - [ ] Confirm agents hold read-scoped telemetry credentials only — no CMS write rights (`../../kirby-agent-security/SKILL.md`).
 - [ ] Hash-pin the pre-edit passage as the rollback artifact on every proposal.
 - [ ] Confirm no template-wide batch mutation is scheduled in the measurement window (control cohort must survive).
-- [ ] Cross-check velocity and staging law against `kirby-seo-deployment` Module 7 §7.11 before any batch deploys.
+- [ ] Cross-check velocity and staging law against `kirby-seo-deployment` Module 7 §7.14 before any batch deploys.
 
 ---
 

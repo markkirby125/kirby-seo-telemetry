@@ -166,7 +166,7 @@ The operationally sound alternative is **topic-cluster visibility tracking**:
 | **Benchmark** | Internal trend vs. prior months | Competitor prompt-level comparison |
 
 **AI Visibility Tracking Checklist**
-- [ ] Define 5–10 Topic Buckets aligned to the 3-bucket BOFU keyword taxonomy (§2.16B).
+- [ ] Define 5–10 Topic Buckets aligned to the 4-Bucket BOFU keyword taxonomy (`kirby-aiseo-skill` Module 2 §2.16 sub-block B).
 - [ ] Generate 10–20 prompt variants per bucket covering phrasing diversity.
 - [ ] Run visibility checks across all prompt variants monthly (manual or via AI tracking tool).
 - [ ] Calculate % visibility per bucket and record in rolling monthly tracker.
@@ -224,7 +224,7 @@ Searchers divide into immediate converters and visual skimmers. Implement a dual
 
 ---
 
-### **5.10 The 3-Agent Autonomous SEO Audit Fleet & The 58% AI Overview Cannibalization Diagnostic**
+### **5.10.1 The 3-Agent Autonomous SEO Audit Fleet & The 58% AI Overview Cannibalization Diagnostic**
 
 *Source: Matt Diggity (The Search Initiative), "I Let AI Agents Run My SEO. Here’s what happened…". September 2026.*
 
