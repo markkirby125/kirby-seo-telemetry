@@ -226,3 +226,37 @@ This is not a preference about workflow quality. A self-optimizing loop with pro
 - [ ] Hash-pin the pre-edit passage as the rollback artifact on every proposal.
 - [ ] Confirm no template-wide batch mutation is scheduled in the measurement window (control cohort must survive).
 - [ ] Cross-check velocity and staging law against `kirby-seo-deployment` Module 7 §7.11 before any batch deploys.
+
+---
+
+## 9.6 The Won-Bucket Reallocation Rule (>50%) — Extends Module 5 §5.10
+
+*Source: LLM Mastery — "Advanced LLM Visibility Hacks" (Landwehr / Dash / Dooley), 2026. This section extends — does not replace — Module 5 §5.10's Topic-Bucket Tracking Standard: the unit of tracking remains the **topic bucket**, never the individual prompt (§5.10's prompt-chasing anti-pattern ruling stands).*
+
+* **Bucket Definition:** A bucket = §5.10's topic bucket refined to **intent × persona × funnel stage**, using the §2.16B fan-out taxonomy as the variant generator (per §5.10's anchor).
+* **Probe Set (sampling frame — follows §5.10):** §5.10's standard frame is **10–20 query variants per bucket**; the LLM Mastery source operates a lighter ~5-probe frame. Reconciliation: **N=10–20 probes is the default**; N=5 is the sanctioned minimum for constrained budgets, with the coarser quantization stated below. Rationale (reported by LLM Mastery citing Rand Fishkin's 144-prompt experiment, secondary source, unverified): ~90% of distinct phrasings collapse to the same underlying intent, so representative probes measure the bucket without chasing infinite phrasings.
+* **Measurement Procedure (declare per bucket, keep fixed):** engine scope (declare which — e.g., ChatGPT + Google AI Overviews); one run per probe per engine per day; fresh logged-out sessions; fixed geo/locale; **"citing" = the brand is named in the answer body** (link presence not required).
+* **Quantized Verdicts (avoid fractional readings):** Bucket visibility = probes citing the brand / N, read only on the **7-day rolling** count. **Won bucket: >50% (i.e., ≥3/5 at N=5, ≥6/10 at N=10). Active bucket: ≤50%.** Never act on a single day's readings.
+* **The Reallocation Rule:** Once a bucket is won, retire it from *optimization* spend and reallocate to active buckets — the objective is lifting the brand's overall visibility floor, not polishing a won bucket to unanimity.
+* **Ceded-Position Risk (documented trade-off):** Retired buckets stay on weekly monitoring (single probe pass) so competitor incursions are caught; no optimization budget is spent there.
+* **Attribution Discipline:** Bucket-visibility shifts obey §9.3 — apply the freshness/QDF control and confounder checks before attributing any visibility change to optimization work; mark in-window gains `PROVISIONAL_FRESHNESS` per house rules.
+
+---
+
+## 9.7 Internal Voice-of-Customer Harvesting Pipeline
+
+*Source: LLM Mastery — "Advanced LLM Visibility Hacks", 2026. Feeds §9.6 probe-set and bucket construction.*
+
+* **The Doctrine:** High-intent query phrasing lives inside the company, not keyword tools. Mine exact customer language from:
+  1. **Sales call recordings** (Gong.io-class transcripts) — objections, comparisons, and phrasing used at decision time.
+  2. **Support tickets** (Zendesk/Intercom) — pain vocabulary and failure-mode phrasing.
+  3. **On-site search logs** — in-website query strings customers actually type.
+* **The Jargon Disconnect (reported anecdote, unverified):** A pharmaceutical brand reportedly failed to rank by targeting "myocardial infarction" while customers asked about "heart attacks." Harvested phrasing replaces internal jargon in §9.6 probe sets and in `kirby-aiseo-skill` §2.19 elevation work.
+* **⚠️ Mandatory PII Anonymization Stage (precedes every other step; not optional):** Sales calls and tickets contain personal and confidential customer data. Before any transcript or ticket text enters an LLM pipeline (bucketing, phrasing extraction, probe generation):
+  1. Strip names, emails, phones, account numbers, and other direct identifiers.
+  2. Replace company names with sector labels unless the account has consented.
+  3. Process aggregates (top phrasings), not verbatim dumps.
+  4. **Special-category data** (health, financial, legal — likely given support-ticket domains) never enters the pipeline even anonymized; only frequency counts over such tickets are harvested.
+  5. Honor DPAs — if the processing agreement does not cover LLM transmission, the data does not enter the pipeline.
+  6. Verify: sample-audit pipeline outputs quarterly for residual identifiers; a leak reverts the source to counts-only.
+* **Output Contract:** `Harvested_Phrasing → Source_Bucket (gong|zendesk|intercom|site_search) → Anonymized (bool, must be true) → Mapped_Topic_Bucket (§9.6) → Confidence`.
