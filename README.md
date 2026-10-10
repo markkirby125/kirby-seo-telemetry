@@ -8,6 +8,8 @@ You need to track your search performance and attribution. Historically, you cou
 
 If you are flying blind without AI attribution capture, you are fundamentally mispricing your customer acquisition costs (CAC) and leaving your Google Ads vulnerable to algorithmic bidding spirals.
 
+**October 2026 update (Module 9 §9.6–§9.7):** The won-bucket reallocation rule — quantized >50% prompt-bucket verdicts that retire won buckets and reallocate spend to lift the overall visibility floor (extends the Module 5 §5.10 topic-bucket standard) — and the internal voice-of-customer harvesting pipeline (Gong/Zendesk/site-search phrasing, with a mandatory PII anonymization stage before any LLM processing).
+
 **The Solution:** The `kirby-seo-telemetry` skill installs the architecture required to capture RAG/LLM mentions, analyze deep Google Search Console (GSC) telemetry, and build conversational ad safeguards. Your AI agent will use these blueprints to fortify your tracking and defend against user pogo-sticking.
 
 ## 🪄 The Magic Prompt
