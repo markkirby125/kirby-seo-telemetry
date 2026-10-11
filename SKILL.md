@@ -4,7 +4,7 @@ description: "Use when dealing with AI attribution capture, GSC telemetry, GBP a
 category: technique
 triggers: [seo-attribution, analytics, conversational-ads, gsc-telemetry, gbp-drift, speed-to-lead, local-call-telemetry, pogo-sticking, reddit-gsc, gsc-coverage, template-fail-rate, preferred-source-tracking, gsc-striking-distance, 1-hour-telemetry]
 risk: unverified
-author: william-fitzpatrick
+author: paul-kirby
 tags: [kirby, ai-agent, workflow]
 ---
 
