@@ -10,6 +10,8 @@ If you are flying blind without AI attribution capture, you are fundamentally mi
 
 **October 2026 update (Module 9 §9.6–§9.7):** The won-bucket reallocation rule — quantized >50% prompt-bucket verdicts that retire won buckets and reallocate spend to lift the overall visibility floor (extends the Module 5 §5.10 topic-bucket standard) — and the internal voice-of-customer harvesting pipeline (Gong/Zendesk/site-search phrasing, with a mandatory PII anonymization stage before any LLM processing).
 
+**October 2026 update (Module 11):** The 7-phase spam-update audit protocol for the Sept 24 rollout — 14-day before/after GSC deltas, `/locations/` vs `/services/` folder segmentation, rollout-window alignment, manual-action clearance, and the fix-timing gate — plus the reclassification of `Crawled - currently not indexed` location pages as a *differentiation deficit* rather than an indexing bug (remediation routes to `kirby-local-seo` Module 7).
+
 **The Solution:** The `kirby-seo-telemetry` skill installs the architecture required to capture RAG/LLM mentions, analyze deep Google Search Console (GSC) telemetry, and build conversational ad safeguards. Your AI agent will use these blueprints to fortify your tracking and defend against user pogo-sticking.
 
 ## 🪄 The Magic Prompt
