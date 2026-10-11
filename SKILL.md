@@ -2,7 +2,7 @@
 name: kirby-seo-telemetry
 description: "Use when dealing with AI attribution capture, GSC telemetry, GBP attribute drift detection, Speed-to-Lead call telemetry, GSC coverage hygiene, Google Ads safeguards, pogo-sticking defense, or pipeline stall threshold monitoring against Google's official timing benchmarks."
 category: technique
-triggers: [seo-attribution, analytics, conversational-ads, gsc-telemetry, gbp-drift, speed-to-lead, local-call-telemetry, pogo-sticking, reddit-gsc, gsc-coverage, template-fail-rate, preferred-source-tracking, gsc-striking-distance, 1-hour-telemetry, pipeline-stall, stall-thresholds, indexing-stall]
+triggers: [seo-attribution, analytics, conversational-ads, gsc-telemetry, gbp-drift, speed-to-lead, local-call-telemetry, pogo-sticking, reddit-gsc, gsc-coverage, template-fail-rate, preferred-source-tracking, gsc-striking-distance, 1-hour-telemetry, pipeline-stall, stall-thresholds, indexing-stall, ads-cannibalization, brand-ppc-defense]
 risk: unverified
 author: paul-kirby
 tags: [kirby, ai-agent, workflow]

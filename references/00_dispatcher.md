@@ -11,6 +11,7 @@ This skill handles Attribution Tracking & Conversational Ad Architectures.
 - **Module 10: Local GBP Drift Detection & Speed-to-Lead Telemetry (Mike Martin & Edward Sturm Ep. 1172)** -> Read `./module_10_local_gbp_drift_speed_to_lead_telemetry.md`
 - **Module 11: Spam Update Audit & GSC Differentiation-Deficit Triage (Sept 24, 2026 Spam Update)** -> Read `./module_11_spam_update_audit_gsc_triage.md`
 - **Module 12: Pipeline Stall Telemetry — Sequential Delay Threshold Triggers (Google Illyes Oct 2026)** -> Read `./module_12_pipeline_stall_threshold_telemetry.md`
+- **Module 13: Ads vs. Organic Brand-Search Cannibalization Telemetry** -> Read `./module_13_ads_organic_brand_cannibalization.md`
 
 ## When to Use
 - You are analyzing Google Search Console (GSC) telemetry or AI attribution.
@@ -27,4 +28,5 @@ This skill handles Attribution Tracking & Conversational Ad Architectures.
 - You are tracking Google Preferred Source opt-in events (`preferred_source_optin`), 2x CTR lift attribution, or GSC AI Overview correlation: route to `../../kirby-preferred-sources/SKILL.md` Module 4.
 - For net-new target keywords lacking GSC impression history, internal authority discovery is the search operator harvest in `../../kirby-aiseo-skill/SKILL.md` §10.11 — telemetry tools only measure queries where impressions already register.
 - You are instrumenting Google's official pipeline benchmarks as stall alerts: two-tier thresholds (T1 watch at typical — ~20h discovery, ~30d recrawl, ~1.5h indexing pipeline via log-file instrument only; T2 stalled-asset boundaries — 14d sitemap [published slow case], 14d discovery / 60d SERP refresh / 8wk canonical [derived boundaries, provenance in §12.1]), stage-chained reporting so diagnosis starts at the true bottleneck, and migration consolidation checkpoints at 30/60/90 days (Module 12; threshold definitions and the diagnosis doctrine are `../../kirby-seo-timing-benchmarks/SKILL.md` References 01–03).
+- You are monitoring brand-search cannibalization between Google Ads brand campaigns and organic #1 positions: brand-query GSC overlay, the pause/geo-split incremental-click test, and the defense-vs-reallocate decision matrix (Module 13; the local siphoning-defense doctrine is `../../kirby-local-seo/SKILL.md` Module 6 §6.13, and reallocation targets are architected in `../../kirby-paid-acquisition/SKILL.md` Module 1).
 
