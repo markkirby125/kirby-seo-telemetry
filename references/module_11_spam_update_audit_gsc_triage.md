@@ -21,6 +21,7 @@ Run all seven phases in order. Phases 1–4 establish facts; Phase 5 scores dama
 *   **Both down proportionally** → suspect sitewide cause; re-run Phase 3/4 before blaming the spam update.
 *   **Homepage down alone** → entity/brand issue, not doorway classification; route to brand-query telemetry (Module 10) and manual-action check.
 *   **Impressions retained, clicks collapsed** → ranking demotion rather than deindexing; pages still surface for long-tail but lost competitive queries — same remediation, lower urgency.
+*   **Both subpages and root domain collapsed (-90%+ clicks across high-DA domain)** → Scaled AI Domain-Wide Trust Drain (Grokipedia Pattern, Ep 1197). Triggered when unreviewed programmatic AI content violates Scaled Content Abuse, causing Google's algorithms to lose trust in the entire domain holistically. Route to `../../kirby-aiseo-skill/SKILL.md` Module 17.
 
 ### **11.4 Post-Fix Verification Loop**
 After remediation and re-requesting indexing (GSC URL Inspection, only for pages now passing Rules 1–7):
