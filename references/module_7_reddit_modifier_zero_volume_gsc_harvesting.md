@@ -13,3 +13,12 @@ To circumvent third-party tool blindness, treat first-party `[Keyword] + Reddit`
 
 ### **7.3 Cornerstoning Strategy**
 Use the hidden buyer intent and topical authority gained from these easier, low-competition queries to expand the content and launch attacks on the harder, high-competition parent keywords.
+
+### **7.4 First-Party GSC Impression Data IP Flywheel & Zero-Click Conversion Signals**
+*Source: Edward Sturm Ep. 1206 (David Quaid, Harpreet Singh, Gagan Ghotra).*
+
+* **The Third-Party Scraping Lag Moat:** Third-party keyword research tools rely on historical clickstream samples and monthly scrape aggregations, lagging actual real-time SERP demand by 30 to 90 days. During fast-moving promotional windows or seasonal shopping peaks, third-party databases report emerging modifier queries as zero search volume.
+* **The First-Party Impression Moat:** First-party Google Search Console API exports retain 16 months of daily granular impression and query telemetry. This dataset functions as a proprietary search intelligence asset:
+  1. **Low-CTR / High-Impression Query Extraction:** Continuously filter for queries accumulating $\ge 50$ impressions with $<2\%$ CTR across any rank position. *(Scope seam: §7.4 isolates nascent demand for content expansion; §9.2 isolates positions 1–3 snippet intent mismatch).*
+  2. **Seasonal Intent Spike Detection:** Flag queries exhibiting sudden weekly impression velocity increases (>300% week-over-week) regardless of low absolute volume numbers.
+  3. **Zero-Click Conversion Handoff:** Route identified zero-volume and low-CTR queries directly to `../../kirby-aiseo-skill/SKILL.md` Module 2: deploy compact on-page FAQ blocks per §2.46 (under §2.14 architecture and §2.32 FAQ Farm $\le 15$ question guardrails), synthesize middle-of-funnel comparison guides per §2.48, and align offer terms with the Discount Transparency Block per §2.49.

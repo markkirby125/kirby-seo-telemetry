@@ -543,3 +543,23 @@ def audit_undertargeting(page_dom, page_url, gsc_query):
 - [ ] Compare query strings against current page 4 anchor spots (`<title>`, URL slug, `<h1>`, first sentence hook).
 - [ ] Flag all high-impression queries failing the 4-spot check as `UNDERTARGETED_OPPORTUNITY`.
 - [ ] Dispatch clean payload to `kirby-aiseo-skill` §2.19 for on-page injection.
+
+---
+
+### **5.16 The AEO Attribution Fog & Citation Surge Sensor Network**
+*Source: Edward Sturm Ep. 1206 (David Quaid, Harpreet Singh, Gagan Ghotra).*
+
+#### A. The Cookie-Less & Referral-Free Attribution Blindspot
+When users query conversational AI engines (ChatGPT Search, Perplexity Pro, Google Gemini, Claude Artifacts), LLM citations routinely fail to pass traditional HTTP referrer headers or trackable cookie state:
+1. **Referral Header Stripping:** AI platforms and native mobile apps frequently strip or generalize the `Referer` header to generic hostnames (`chatgpt.com`, `android-app://com.google.android.googlequicksearchbox`), collapsing traffic into direct sessions.
+2. **Untracked URL Parameters:** Citation links embedded in synthesized answers typically omit campaign UTM parameters unless explicitly hardcoded into source metadata.
+3. **The Zero-Click Synthesis Loop:** Prospects absorb the recommendation inside the AI interface and subsequently navigate directly via URL bar autocomplete, mobile bookmark, or a clean branded search query. In GA4, these high-intent buyers appear falsely as organic brand search or unattributed direct traffic.
+
+#### B. The 3-Tier AEO Telemetry Sensor Standard
+To pierce this attribution fog and quantify AI citation ROI, maintain an isolated sensory panel:
+1. **Topic-Bucket AI Visibility Probing:** Deploy the §5.10 Topic-Bucket Tracking Standard (10–20 prompt variants per bucket across commercial topic buckets, monitored on §9.6's rolling weekly probe cadence rather than waiting for monthly aggregates; Bing Webmaster Tools AI Performance and SE Ranking AI Overview tracker). Measure citation frequency and domain citation presence.
+2. **Branded Search & Direct Volume Surge Correlation:** When a target URL achieves citation status across major LLMs, log the timestamp and monitor for a 24-to-72 hour surge in:
+   - Google Search Console brand query impressions and clicks.
+   - GA4 Direct channel first-time user sessions on the cited root and product categories.
+   - Sudden increases in direct form fills or checkout starts lacking paid campaign click IDs (`gclid`, `fbclid`).
+3. **Cross-Channel Attribution Handoff:** Log correlated citation-surge timestamps in the telemetry ledger to attribute macro-conversion lift accurately, eliminating premature budget cuts to organic SEO and AEO assets.

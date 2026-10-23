@@ -260,3 +260,15 @@ This is not a preference about workflow quality. A self-optimizing loop with pro
   5. Honor DPAs — if the processing agreement does not cover LLM transmission, the data does not enter the pipeline.
   6. Verify: sample-audit pipeline outputs quarterly for residual identifiers; a leak reverts the source to counts-only.
 * **Output Contract:** `Harvested_Phrasing → Source_Bucket (gong|zendesk|intercom|site_search) → Anonymized (bool, must be true) → Mapped_Topic_Bucket (§9.6) → Confidence`.
+
+---
+
+## 9.8 72-Hour Dynamic PAA Injection Engine & Seasonal Shift Telemetry
+
+*Source: Edward Sturm Ep. 1206 (David Quaid, Harpreet Singh, Gagan Ghotra).*
+
+* **The Rapid SERP Intent Inversion:** During peak commercial events and promotional cycles (Q4 Black Friday, Cyber Monday, seasonal resets), search query intent shifts within hours from broad informational exploration to narrow transactional terms (e.g., *"Is [Product] on sale for Black Friday?"*, *"What are the best [Category] deals right now?"*). Google's People Also Ask (PAA) accordions and AI Overview citation panels update dynamically to reflect these shifts days before third-party rank trackers register changes.
+* **The 72-Hour Telemetry Cadence:**
+  1. **SERP PAA Scrape & GSC Overlay:** Run automated SERP PAA question harvesting across target product categories every 72 hours leading up to major promotional deadlines.
+  2. **Threshold Gate:** When a candidate PAA question accumulates $\ge 50$ impressions in GSC or appears across $\ge 3$ adjacent commercial queries in the category SERP, flag it as `ACTIVE_PAA_CANDIDATE`.
+  3. **Attribution & Execution Seam:** Telemetry records the detected question string and target landing page URL. Pass the candidate payload directly to `../../kirby-aiseo-skill/SKILL.md` Module 2: deploy compact PAA question accordions per §2.46 (under §2.14 on-page standards and §2.32 FAQ Farm $\le 15$ question limits). Telemetry must never author or publish DOM copy directly.
