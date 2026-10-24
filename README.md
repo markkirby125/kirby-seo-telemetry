@@ -14,6 +14,8 @@ If you are flying blind without AI attribution capture, you are fundamentally mi
 
 **October 2026 update (Module 12):** Pipeline stall telemetry from Google's official Illyes benchmarks — two-tier threshold triggers (watch at typical values: ~20h discovery, ~1.5h indexing pipeline via log-file instrument only, ~30d recrawl; stalled-asset alerts: 14d sitemap [published slow case], 14d discovery / 60d recrawl-gated SERP refresh / 8wk canonical convergence [derived boundaries, provenance in §12.1]), stage-chained stall reporting that identifies the true sequential bottleneck, and migration consolidation checkpoints at 30/60/90 days with the month-6 escalation alert (benchmark doctrine in `kirby-seo-timing-benchmarks`).
 
+**October 2026 update (Module 15):** The Anti-Shotgun Protocol and JSON Changelog Schema (`seo_changelog.json`) derived from Ćorluka's 9,249-document SEO Meta Study (The Edward Show Ep. 1191/1207; Zenodo DOI: 10.5281/zenodo.22768160) — single-variable isolation, paired control groups, mandatory 90-day review gate, and server-log/referral-first AEO/GEO crawler verification.
+
 **The Solution:** The `kirby-seo-telemetry` skill installs the architecture required to capture RAG/LLM mentions, analyze deep Google Search Console (GSC) telemetry, and build conversational ad safeguards. Your AI agent will use these blueprints to fortify your tracking and defend against user pogo-sticking.
 
 ## 🪄 The Magic Prompt

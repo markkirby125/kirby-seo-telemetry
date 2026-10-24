@@ -13,6 +13,7 @@ This skill handles Attribution Tracking & Conversational Ad Architectures.
 - **Module 12: Pipeline Stall Telemetry — Sequential Delay Threshold Triggers (Google Illyes Oct 2026)** -> Read `./module_12_pipeline_stall_threshold_telemetry.md`
 - **Module 13: Ads vs. Organic Brand-Search Cannibalization Telemetry** -> Read `./module_13_ads_organic_brand_cannibalization.md`
 - **Module 14: GBP Enforcement Status, Review Freeze & Reply Quarantine Telemetry (Whitespark E41/E46/E28 & Caleb Ulku)** -> Read `./module_14_gbp_enforcement_status_and_reply_quarantine_telemetry.md`
+- **Module 15: Isolated SEO Changelog Protocol & Empirical Verification Telemetry (The SEO Meta Study / Ep. 1191/1207)** -> Read `./module_15_isolated_seo_changelog_protocol.md`
 
 ## When to Use
 - You are analyzing Google Search Console (GSC) telemetry or AI attribution.
@@ -34,4 +35,5 @@ This skill handles Attribution Tracking & Conversational Ad Architectures.
 - You are piercing cookie-less and non-referral AI attribution fog by tracking topic-bucket LLM citations and correlating them against 24-to-72 hour branded query spikes and direct GA4 traffic lifts (Module 5 §5.16).
 - You are leveraging 16-month first-party GSC impression data as a proprietary IP flywheel to identify emerging seasonal search demand, low-CTR queries, and zero-click conversion signals ignored by lagging third-party SEO tools (Module 7 §7.4; on-page FAQ deployment is `../../kirby-aiseo-skill/SKILL.md` §2.46 under §2.14/§2.32, comparison guides are §2.48, and discount blocks are §2.49).
 - You are running a 72-hour dynamic PAA harvesting loop during promotional windows to capture real-time intent shifts and dispatch structured FAQ candidates to `../../kirby-aiseo-skill/SKILL.md` Module 2 §2.46 (Module 9 §9.8).
+- You are instrumenting single-variable SEO split testing, enforcing the Anti-Shotgun Protocol with paired control groups, validating interventions via the JSON changelog schema (`seo_changelog.json`), enforcing the mandatory 90-day review gate, or conducting empirical AEO/GEO crawler verification and multi-engine probe matrices (Module 15).
 
