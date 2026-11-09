@@ -47,7 +47,7 @@ Google subjects all owner review responses to two-stage moderation: (1) an autom
 * **Dual-Perspective Audit Probe**:
   - Compare the authenticated GBP API `reviewReply` payload against an unauthenticated public SERP scrape on a 7-day rolling schedule.
   - Any review where `authenticated.hasReply == true` AND `public.hasReply == false` flags a **Quarantined Owner Response**.
-  - Route quarantined replies to [`kirby-local-seo`](../../kirby-local-seo/SKILL.md) Module 10 §10.1 to scrub customer surnames, invoice numbers, or disputed job details and republish using the compliant Apologetic Conversion Script.
+  - Route quarantined replies to [`kirby-gbp-review-replies`](../../kirby-gbp-review-replies/SKILL.md) to be re-drafted (first name only; no surnames, invoice numbers, amounts, addresses or disputed job details; phone number only on owner opt-in) and republished after human approval. [`kirby-local-seo`](../../kirby-local-seo/SKILL.md) Module 10 §10.1 remains the compliance reference for what a reply must not contain.
 
 ---
 
