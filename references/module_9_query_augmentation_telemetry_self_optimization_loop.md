@@ -185,6 +185,7 @@ This is not a preference about workflow quality. A self-optimizing loop with pro
 
 * **Hash-pin the pre-edit passage** and ship it with the proposal as the rollback artifact.
 * **One mutation per URL per cooldown window** (§9.3A). Re-triggering the detector is not permission to edit the passage again inside the window.
+* **Respect a `FREEZE` entry.** A URL with a `FREEZE` entry in `seo_changelog.json` takes no detector-triggered mutation, even one per cooldown window, other than changes already filed there and defect fixes. Scope and hedges (directional, single-source) are in Module 15 §15.2 item 4.
 * **Scope-limit the rewrite** to the named `<h2>` + lead paragraph. Flag any proposal that touches the `<title>`, slug, or page structure for human review as a separate decision (§2.18 / §2.37).
 * **Log every proposal as a ledger row** with `Edit_Date`, `Cooldown_End`, `Verdict`, and the confounder snapshot (§9.3B) so a later reader can reconstruct why a change was made and whether it worked.
 
