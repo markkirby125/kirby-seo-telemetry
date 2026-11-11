@@ -34,3 +34,4 @@ After remediation and re-requesting indexing (GSC URL Inspection, only for pages
 *   Metadata fact-check mandate → `../../kirby-aiseo-skill/SKILL.md` Module 15.
 *   Pre-deployment lint gate preventing the next bulk rollout of failing pages → `../../kirby-seo-deployment/SKILL.md` Module 19.
 *   Template fail-rate slope (pre-existing hygiene monitoring) → Module 8.
+*   Residual-query triage after a broad link-based demotion (recovery, not remediation of a spam update) → `../../kirby-off-page-seo/SKILL.md` Module 18 §18.23 (directional, single-source).
