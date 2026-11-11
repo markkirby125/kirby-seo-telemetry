@@ -68,6 +68,7 @@ Editorial media drives **61% of AI search citations** (vs. 44% from brand websit
 * **Search Console Page-to-Traffic Yield Telemetry:**
   * Track the **Index-to-Click Ratio**: $\text{Yield} = \frac{\text{Daily Organic Clicks}}{\text{Total Indexed URLs}}$.
   * **Alert Threshold:** If total indexed URLs grow by $>20\%$ while organic clicks plateau or drop over a rolling 14-day window, immediately halt new page indexation, execute a content decay audit, and prune zero-click zombie URLs.
+  * **Funnel-Stage Check Before Declaring a Loss:** Report sessions beside conversions for each funnel stage (TOFU vs BOFU) first; informational TOFU pages convert rarely by design, so low conversion alone is not a loss. A URL is a prune candidate only if it has zero clicks and zero conversions over the same rolling 14-day window.
 
 ##
 

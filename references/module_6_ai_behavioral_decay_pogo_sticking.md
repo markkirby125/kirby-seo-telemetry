@@ -18,4 +18,5 @@ Track behavioral decay in first-party telemetry. Do not infer it from copy alone
 - [ ] **GSC (28-day window):** flag BOFU URLs whose CTR drops vs. the site baseline after publish or template refresh, despite stable impressions.
 - [ ] **Analytics:** flag entrances with <10s engagement or immediate back-to-SERP (pogo) on those URLs.
 - [ ] **Threshold:** if a shared template family is elevated vs. the rest of the site, stop further publishes of that template until Module 7.3 density rules are applied.
+- [ ] **Above the fold (heuristic, unverified):** check that the answer lands in the first ~25 words per the BLUF capsule in `../../kirby-aiseo-skill/SKILL.md` Module 2 §2.28 (20-45 words; 20-25 on yes/no answers) and the first-sentence hook in §2.31. These word counts are working heuristics; track the effect through engagement telemetry, not as a ranking factor.
 - [ ] Record the template ID, URL set, and date the decay started so later deploys can be compared.
