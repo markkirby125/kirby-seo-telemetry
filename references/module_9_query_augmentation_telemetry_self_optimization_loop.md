@@ -103,6 +103,10 @@ Telemetry produces a staging proposal; execution writes it. Sequence:
 
 **NavBoost feedback note:** the payoff is not the snippet text itself, it is the compounded effect — higher CTR raises the interaction signal, which raises position on adjacent augmented queries, which raises the impression base. That compounding makes the 14–21 day cooldown (§9.3A) and the confounder controls (§9.3B) mandatory rather than optional.
 
+### D. Effort Proxies
+
+**Effort proxies.** Edit counts and scroll depth are unverified "effort" proxies: track them as engagement telemetry, not as a ranking factor (directional, unverified). Dwell and bounce behaviour is handled separately in Module 5 §5.7 and §5.8.
+
 ---
 
 ## 9.3 Attribution Honesty & Confounder Controls
