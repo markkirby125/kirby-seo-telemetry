@@ -14,7 +14,7 @@ Run all seven phases in order. Phases 1–4 establish facts; Phase 5 scores dama
 4.  **Manual-Action Clearance.** Check Security & Manual Actions for "No issues detected". Algorithmic demotion produces no message; a manual action changes the entire remediation path — stop this protocol and remediate the action first.
 5.  **10-Rule Differentiation Scoring.** Score every page in the affected folder against the 10-rule checklist and eliminate Gate 0 failures. Scoring criteria and remediation order: `../../kirby-local-seo/SKILL.md` Module 7 §7.4, §7.8. Telemetry's job is only to rank which pages lost most and therefore get scored first.
 6.  **Claim & Metadata Fact-Check.** Verify page body claims (pricing, licensing, first-hand job stories) and metadata (`<title>`, meta description, JSON-LD, alt text) against ground truth. Mandate details: `../../kirby-aiseo-skill/SKILL.md` Module 15.
-7.  **Fix-Timing Gate.** Execute fixes only after the rollout is marked complete on status.search.google.com. Mid-rollout changes cannot be evaluated — you would be optimizing against a moving classifier and learning nothing from the result.
+7.  **Fix-Timing Gate.** Execute fixes only after the rollout is marked complete on status.search.google.com. Mid-rollout changes cannot be evaluated — you would be optimizing against a moving classifier and learning nothing from the result. For core updates, add the +7-day wait and freeze queue in Module 16 §16.1–16.2.
 
 ### **11.3 Folder-Segment Diagnostic Patterns**
 *   **`/locations/` down, `/services/` stable** → classic programmatic-doorway demotion. Proceed to Phase 5 scoring.
