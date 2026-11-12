@@ -105,7 +105,7 @@ Telemetry produces a staging proposal; execution writes it. Sequence:
 
 ### D. Effort Proxies
 
-**Effort proxies.** Edit counts and scroll depth are unverified "effort" proxies: track them as engagement telemetry, not as a ranking factor (directional, unverified). Dwell and bounce behaviour is handled separately in Module 5 §5.7 and §5.8, and pogo-sticking in Module 6.
+**Effort proxies.** Edit counts and scroll depth are unverified "effort" proxies: track them as engagement telemetry, not as a ranking factor (directional, unverified). Dwell and bounce behaviour is handled separately in Module 5 §5.7 and §5.8, and pogo-sticking in Module 6 §6.1.
 
 ---
 
