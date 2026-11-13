@@ -250,13 +250,19 @@ This is not a preference about workflow quality. A self-optimizing loop with pro
 
 ## 9.7 Internal Voice-of-Customer Harvesting Pipeline
 
-*Source: LLM Mastery — "Advanced LLM Visibility Hacks", 2026. Feeds §9.6 probe-set and bucket construction.*
+*Source: LLM Mastery — "Advanced LLM Visibility Hacks", 2026; Rob Hoffman BOFU Alternatives Blueprint (`OUEELIis-do`). Feeds §9.6 probe-set and bucket construction, plus BOFU Alternatives conversational FAQ generation (`../../kirby-aiseo-skill/SKILL.md` §2.50).*
 
 * **The Doctrine:** High-intent query phrasing lives inside the company, not keyword tools. Mine exact customer language from:
-  1. **Sales call recordings** (Gong.io-class transcripts) — objections, comparisons, and phrasing used at decision time.
+  1. **Sales call recordings** (Gong.io / Fathom / Chorus transcripts & objection logs) — pricing shock, contract lock-in objections, comparisons, and exact natural-language phrasing used at decision time.
   2. **Support tickets** (Zendesk/Intercom) — pain vocabulary and failure-mode phrasing.
   3. **On-site search logs** — in-website query strings customers actually type.
 * **The Jargon Disconnect (reported anecdote, unverified):** A pharmaceutical brand reportedly failed to rank by targeting "myocardial infarction" while customers asked about "heart attacks." Harvested phrasing replaces internal jargon in §9.6 probe sets and in `kirby-aiseo-skill` §2.19 elevation work.
+* **BOFU Alternatives Page Conversational FAQ Generation (Gong / Fathom Objection-to-Prompt Pipeline):**
+  * Connect anonymized sales call objection logs (Gong / Fathom) directly into the generation of the **5–8 conversational FAQ prompts** at the bottom of BOFU `[Competitor] Alternatives` pages (`../../kirby-aiseo-skill/SKILL.md` §2.50), ensuring every FAQ `<h3>` mirrors the exact long-tail conversational prompts buyers type into ChatGPT and Perplexity rather than generic SEO keyword stubs:
+    - **Pricing & Hidden-Fee Prompts**: e.g., *"How much does [Competitor] actually cost in 2026?"* (capturing hidden platform fees, minimum monthly commitments, and annual contract floors raised on discovery calls).
+    - **Volume & Turnaround Prompts**: e.g., *"What are the best [Competitor] alternatives for high-volume [service]?"* (disambiguating multi-sense buyer terms like "high volume" into throughput vs. resizing vs. parallel projects).
+    - **Vertical & Persona Prompts**: e.g., *"What is the best [Competitor] alternative for [SaaS / Web Design / Video Production / Mid-Market] teams?"* (mapped directly from prospect industry tags and functional objections in Gong/Fathom).
+  * **Handoff Seam:** Telemetry packages the anonymized top 5–8 buyer objection questions alongside the disambiguated sub-intents and hands them to `../../kirby-aiseo-skill/SKILL.md` §2.50 (which formats each answer with a 1-sentence disambiguation opener followed by 2–3 sentence paragraphs or 3–4 concise tool-mapping bullets).
 * **⚠️ Mandatory PII Anonymization Stage (precedes every other step; not optional):** Sales calls and tickets contain personal and confidential customer data. Before any transcript or ticket text enters an LLM pipeline (bucketing, phrasing extraction, probe generation):
   1. Strip names, emails, phones, account numbers, and other direct identifiers, and scan for indirect identifiers (roles in small companies, rare attributes, order numbers) — free text is pseudonymous until the quarterly audit proves otherwise.
   2. Replace company names with sector labels unless the account has consented.
@@ -264,16 +270,16 @@ This is not a preference about workflow quality. A self-optimizing loop with pro
   4. **Special-category data** (health, financial, legal — likely given support-ticket domains) never enters the pipeline even anonymized; only frequency counts over such tickets are harvested.
   5. Honor DPAs — if the processing agreement does not cover LLM transmission, the data does not enter the pipeline.
   6. Verify: sample-audit pipeline outputs quarterly for residual identifiers; a leak reverts the source to counts-only.
-* **Output Contract:** `Harvested_Phrasing → Source_Bucket (gong|zendesk|intercom|site_search) → Anonymized (bool, must be true) → Mapped_Topic_Bucket (§9.6) → Confidence`.
+* **Output Contract:** `Harvested_Phrasing → Source_Bucket (gong|fathom|zendesk|intercom|site_search) → Anonymized (bool, must be true) → Mapped_Topic_Bucket (§9.6) | BOFU_FAQ_Candidate (§2.50) → Confidence`.
 
 ---
 
 ## 9.8 72-Hour Dynamic PAA Injection Engine & Seasonal Shift Telemetry
 
-*Source: Edward Sturm Ep. 1206 (David Quaid, Harpreet Singh, Gagan Ghotra).*
+*Source: Edward Sturm Ep. 1206 (David Quaid, Harpreet Singh, Gagan Ghotra); Rob Hoffman (`OUEELIis-do`).*
 
-* **The Rapid SERP Intent Inversion:** During peak commercial events and promotional cycles (Q4 Black Friday, Cyber Monday, seasonal resets), search query intent shifts within hours from broad informational exploration to narrow transactional terms (e.g., *"Is [Product] on sale for Black Friday?"*, *"What are the best [Category] deals right now?"*). Google's People Also Ask (PAA) accordions and AI Overview citation panels update dynamically to reflect these shifts days before third-party rank trackers register changes.
-* **The 72-Hour Telemetry Cadence:**
-  1. **SERP PAA Scrape & GSC Overlay:** Run automated SERP PAA question harvesting across target product categories every 72 hours leading up to major promotional deadlines.
-  2. **Threshold Gate:** When a candidate PAA question accumulates $\ge 50$ impressions in GSC or appears across $\ge 3$ adjacent commercial queries in the category SERP, flag it as `ACTIVE_PAA_CANDIDATE`.
-  3. **Attribution & Execution Seam:** Telemetry records the detected question string and target landing page URL. Pass the candidate payload directly to `../../kirby-aiseo-skill/SKILL.md` Module 2: deploy compact PAA question accordions per §2.46 (under §2.14 on-page standards and §2.32 FAQ Farm $\le 15$ question limits). Telemetry must never author or publish DOM copy directly.
+* **The Rapid SERP Intent Inversion:** During peak commercial events, competitor pricing hikes, and promotional cycles (Q4 Black Friday, Cyber Monday, annual SaaS pricing resets), search query intent shifts within hours from broad informational exploration to narrow transactional and switching terms (e.g., *"Is [Product] on sale for Black Friday?"*, *"Why did [Competitor] raise prices in 2026?"*, *"Best [Competitor] alternatives for mid-market teams"*). Google's People Also Ask (PAA) accordions and AI Overview citation panels update dynamically to reflect these shifts days before third-party rank trackers register changes.
+* **The 72-Hour Telemetry Cadence & VoC Fusion:**
+  1. **SERP PAA Scrape, GSC Overlay & Gong/Fathom Sync:** Run automated SERP PAA question harvesting across target product categories every 72 hours leading up to major promotional deadlines or following a competitor's pricing/contract change, and fuse with live Gong/Fathom sales-call objection spikes (§9.7).
+  2. **Threshold Gate:** When a candidate PAA or VoC objection question accumulates $\ge 50$ impressions in GSC, appears across $\ge 3$ adjacent commercial queries in the category SERP, or recurs across $\ge 3$ qualified sales calls in a 14-day window, flag it as `ACTIVE_PAA_CANDIDATE` / `BOFU_FAQ_CANDIDATE`.
+  3. **Attribution & Execution Seam:** Telemetry records the detected question string and target landing page URL. Pass the candidate payload directly to `../../kirby-aiseo-skill/SKILL.md` Module 2: deploy compact PAA question accordions per §2.46 (under §2.14 on-page standards and §2.32 FAQ Farm $\le 15$ question limits) or merge into the **5–8 conversational long-tail FAQ block** on BOFU alternatives pages per §2.50. Telemetry must never author or publish DOM copy directly.
