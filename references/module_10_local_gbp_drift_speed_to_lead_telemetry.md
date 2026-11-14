@@ -115,3 +115,24 @@ When local service sites scale location or category subpages, granular subfolder
 * **Remediation Protocol:** Consolidate intent by pruning redundant blog posts, redirecting competing doorway pages, and enforcing strict canonical tag targeting to the primary money page.
 
 *Source: The David Quaid SEO Show, Ep. 8 (Jake Hanley × David Quaid). Related `site:` harvesting for new keywords is in `../../kirby-aiseo-skill/SKILL.md` §10.11.*
+
+---
+
+### **10.5 Branded Search vs. Backlink Ratio & Bare `[Brand Name]` Page-1 SERP Slot Ownership / Homonym Disambiguation Audit (Kasra Dash V1)**
+
+*Source: Kasra Dash 172 Core-Update Hit Sites Analysis (Nov 2026) & Navneet Panda reference-query framework (DOJ / Google Leak alignment).*
+
+Core-update sitewide demotions disproportionately hit domains that accumulate aggressive external backlink profiles while exhibiting near-zero organic branded search demand (a classic Rank-and-Rent or link-manipulated footprint; see [`kirby-aiseo-skill`](../../kirby-aiseo-skill/SKILL.md) Module 1 §1.11.1). However, raw GSC brand-query totals can be misread if the brand shares a name with another entity or suffers from fragmented SERP ownership.
+
+#### A. Branded Search vs. Backlink Ratio Telemetry
+* **The Reference-Query Ratio Check:** Compare trailing 90-day Google Search Console **branded query impressions and clicks** (queries containing the exact brand token, DBA name, or navigational modifiers like `"[Brand] reviews"`, `"[Brand] login"`, `"[Brand] phone number"`) against the domain's **active referring domain count** and monthly link velocity.
+* **Anomaly Flag (`WEAK_BRAND_TO_LINK_RATIO`):** *(Directional, single-source Kasra Dash 172-site dataset — Tier 3 hypothesis; calibrate thresholds to niche baseline.)* If referring domains grow steadily (e.g., illustrative `50–200+` RDs) while GSC branded clicks remain flat near zero (e.g., illustrative `<5%` of total organic clicks on an established commercial domain, or zero `[Brand] + [Service]` navigational queries), flag the domain for elevated core-update vulnerability. Pause unbranded link velocity and route to branded-search induction and entity corroboration (`../../kirby-off-page-seo/SKILL.md` Module 4 §4.10 & Module 16).
+
+#### B. Bare `[Brand Name]` Page-1 SERP Slot Ownership & Homonym Disambiguation Audit
+Before diagnosing a branded-search deficit (or locking a brand/DBA name), check the **bare `[Brand Name]`** Page-1 organic SERP (via an approved SERP API or clean logged-out manual lookup respecting search-engine Terms of Service, without city or service modifiers) and score the Top 10 organic slots:
+1. **Slot Ownership Count (Target: $\ge 6\text{–}8 / 10$ Controlled or Corroborated Slots):**
+   * Count how many Page-1 results belong to the business's owned domain (`/`, `/about/`, `/trust`), verified GBP / Knowledge Panel, official social properties (LinkedIn, YouTube, Facebook, `r/[brand]`), or verified third-party review/directory nodes (Yelp, Trustpilot, Clutch, Companies House / state registry) with matching NAP.
+2. **Homonym Collision vs. True Branded-Demand Deficit Disambiguation:**
+   * **Homonym / Entity Collision (`HOMONYM_COLLISION_DETECTED`):** If Page 1 for bare `[Brand Name]` is dominated by an unrelated company in another state/country, a dictionary noun, a celebrity/media title, or a competitor with a similar trading name, Google's entity resolver cannot unambiguously bind bare-brand reference queries to your domain (and GSC branded impressions will appear artificially inflated or split). **Remediation:** Pair the brand with its geographic or category qualifier in `Organization`/`LocalBusiness` `sameAs` schema (`../../kirby-local-seo/SKILL.md` §6.10), anchor 4-node corroboration (`../../kirby-off-page-seo/SKILL.md` Module 16 §16.5), and capture Page-1 branded slots via high-DR parasite/review profiles (`../../kirby-off-page-seo/SKILL.md` §4.5.1 & §4.16).
+   * **Outdated / Conflicting Listing Pollution (`STALE_ENTITY_SLOTS`):** If Page 1 surfaces legacy directory profiles showing old addresses, disconnected phone numbers, or dissolved corporate filings, flag for immediate citation cleanup (`../../kirby-local-seo/SKILL.md` §6.3) so entity hesitation does not suppress Map Pack radius or AI search synthesis.
+   * **True Branded-Demand Void (`TRUE_BRAND_VOID`):** If the brand name is unique (zero homonym collision) yet Page 1 fails to surface a full set of corroborated entity nodes and GSC logs near-zero branded queries, the deficit is genuine real-world awareness — prioritize off-page PR, video, and branded search seeding rather than schema tweaks alone.

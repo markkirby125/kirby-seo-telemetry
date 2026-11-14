@@ -179,11 +179,11 @@ To capture legitimate AI visibility telemetry:
      - `claude.ai`
      - `copilot.microsoft.com`
    - Correlate AI referral spikes with 24-to-72 hour lifts in GSC branded search queries to verify conversational recall (cross-referencing Module 5 §5.16).
-3. **Triangulated Multi-Engine Query Probing**:
-   - Never rely on an N=1 prompt check.
-   - Execute an automated probe matrix of N=10 to N=20 queries across diverse buyer intents, varying operator-controllable factors:
-     - Query phrasing and intent syntax.
+3. **Triangulated Multi-Engine Query Probing & Multi-Run Fan-Out Clustering (Kasra Dash V5)**:
+   - Never rely on an N=1 prompt check. Single-run LLM fan-out inspection suffers from severe non-determinism (a single prompt run may trigger 1 sub-query on one execution and 9 sub-queries on the next).
+   - **3–5x Multi-Run + Multi-Turn Fan-Out Probing**: Execute **3 to 5 repeated runs** per seed prompt plus **multi-turn conversational follow-ups** (e.g., Turn 1 discovery -> Turn 2 constraint narrowing -> Turn 3 comparison/pricing validation) across an automated probe matrix of N=10 to N=20 queries spanning diverse buyer intents, varying operator-controllable factors:
+     - Query phrasing and vertical fan-out syntax (Local = brand + trade directories; E-Com = exact SKU/model + review roundups; B2B SaaS = brand + comparisons/screenshots).
      - Egress geolocation and IP routing.
      - Session state (authenticated vs. anonymous incognito).
-     - Target engine/model family.
-   - Quantify citation share using quantized thresholds (>50% citation rate required to classify an entity as "entrenched" in an answer engine; cross-referencing Module 9 §9.6).
+     - Target engine/model family (ChatGPT Search/Thinking, Google AI Overviews/Gemini, Perplexity).
+   - **Synthesis Recommendation Share + Citations + Conversions Across Engine Lag Windows**: Track three distinct layers per bucket — (a) **Synthesis Recommendation Share** (% of runs where the brand is actively recommended as a top choice in the synthesized prose answer, not merely listed as a footnote URL), (b) **Source Citation Frequency** (>50% quantized threshold required to classify an entity as "entrenched"; cross-referencing Module 9 §9.6), and (c) **Downstream Assisted Conversions** (Module 5 §5.1/§5.16) — evaluated against engine-specific propagation lag windows (**Google AI Overviews: 2–4 weeks** vs. **ChatGPT Search: 60–120 days**; cross-referencing [`kirby-seo-timing-benchmarks`](../../kirby-seo-timing-benchmarks/SKILL.md) Reference 04).

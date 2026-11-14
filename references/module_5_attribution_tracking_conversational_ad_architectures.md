@@ -558,7 +558,7 @@ When users query conversational AI engines (ChatGPT Search, Perplexity Pro, Goog
 
 #### B. The 3-Tier AEO Telemetry Sensor Standard
 To pierce this attribution fog and quantify AI citation ROI, maintain an isolated sensory panel:
-1. **Topic-Bucket AI Visibility Probing:** Deploy the §5.10 Topic-Bucket Tracking Standard (10–20 prompt variants per bucket across commercial topic buckets, monitored on §9.6's rolling weekly probe cadence rather than waiting for monthly aggregates; Bing Webmaster Tools AI Performance and SE Ranking AI Overview tracker). Measure citation frequency and domain citation presence.
+1. **Topic-Bucket AI Visibility & Multi-Run Fan-Out Probing:** Deploy the §5.10 Topic-Bucket Tracking Standard (10–20 prompt variants per bucket across commercial topic buckets, monitored on §9.6's rolling weekly probe cadence rather than waiting for monthly aggregates; Bing Webmaster Tools AI Performance and SE Ranking AI Overview tracker). Because LLM query fan-out is non-deterministic (`1 vs 9` sub-queries across identical runs), require **3–5x repeated runs per prompt plus multi-turn follow-ups** (Module 15 §15.3) and track **Synthesis Recommendation Share** (recommended in the answer body vs. footnote-only citation) alongside citation frequency and conversions across engine propagation lag windows (**Google AI Overviews: 2–4 weeks** vs. **ChatGPT Search: 60–120 days**).
 2. **Branded Search & Direct Volume Surge Correlation:** When a target URL achieves citation status across major LLMs, log the timestamp and monitor for a 24-to-72 hour surge in:
    - Google Search Console brand query impressions and clicks.
    - GA4 Direct channel first-time user sessions on the cited root and product categories.

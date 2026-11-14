@@ -22,7 +22,7 @@ While the rollout is active: **log, do not remediate.**
 
 ### **16.3 Mid-Rollout Competitor Outlier Forensics (Ahrefs)**
 Purpose: understand what a surging competitor changed. Read-only; produces hypotheses, not actions.
-1.  **Outlier detection.** Ahrefs Keywords Explorer → *Position History* for the commercial target terms. Isolate URLs that rose right after Nov 10 while the rest of the SERP stayed flat.
+1.  **Outlier detection (excluding directories/aggregators).** Ahrefs Keywords Explorer → *Position History* for the commercial target terms. Isolate genuine SMB/direct-competitor URLs that rose right after Nov 10 while the rest of the SERP stayed flat, **explicitly excluding third-party directories and aggregators (e.g., Yelp, Angi, HomeAdvisor, Trustpilot, Reddit)** whose domain-level authority swings during core updates distort page-level SMB comparisons.
 2.  **Historical DOM diff.** Ahrefs Site Explorer → *Page Inspect* on the surging URL → **Compare with** earlier crawls. Record added copy blocks, changed headings, reordered sections.
 3.  **Link-velocity check (only if Step 2 shows zero on-page change).** Site Explorer → *Referring Domains*, sort by **First Seen**, look back 3–4 months for acquisition spikes or spam patterns. Pair with `../../kirby-off-page-seo/SKILL.md` Module 25 filtration rules.
 

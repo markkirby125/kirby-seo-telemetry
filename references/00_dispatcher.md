@@ -8,7 +8,7 @@ This skill handles Attribution Tracking & Conversational Ad Architectures.
 - **Module 7: Reddit Modifier Zero-Volume GSC Harvesting & First-Party IP Flywheel (§7.4)** -> Read `./module_7_reddit_modifier_zero_volume_gsc_harvesting.md`
 - **Module 8: GSC Coverage Hygiene & Template Fail-Rate Slope** -> Read `./module_8_gsc_coverage_hygiene_template_fail_rate.md`
 - **Module 9: Query Augmentation Telemetry & The Self-Optimizing Snippet Loop (incl. §9.6 bucket-visibility reallocation, §9.7 voice-of-customer sales-call harvesting for BOFU conversational FAQs, §9.8 72h dynamic PAA engine)** -> Read `./module_9_query_augmentation_telemetry_self_optimization_loop.md`
-- **Module 10: Local GBP Drift Detection & Speed-to-Lead Telemetry (Mike Martin & Edward Sturm Ep. 1172)** -> Read `./module_10_local_gbp_drift_speed_to_lead_telemetry.md`
+- **Module 10: Local GBP Drift Detection & Speed-to-Lead Telemetry (Mike Martin & Edward Sturm Ep. 1172, incl. §10.5 Branded Search vs. Backlink Ratio & Bare `[Brand Name]` SERP Slot / Homonym Audit)** -> Read `./module_10_local_gbp_drift_speed_to_lead_telemetry.md`
 - **Module 11: Spam Update Audit & GSC Differentiation-Deficit Triage (Sept 24, 2026 Spam Update)** -> Read `./module_11_spam_update_audit_gsc_triage.md`
 - **Module 12: Pipeline Stall Telemetry — Sequential Delay Threshold Triggers (Google Illyes Oct 2026)** -> Read `./module_12_pipeline_stall_threshold_telemetry.md`
 - **Module 13: Ads vs. Organic Brand-Search Cannibalization Telemetry** -> Read `./module_13_ads_organic_brand_cannibalization.md`
@@ -19,7 +19,7 @@ This skill handles Attribution Tracking & Conversational Ad Architectures.
 ## When to Use
 - You are analyzing Google Search Console (GSC) telemetry or AI attribution.
 - You are monitoring GBP attribute drift, detecting "Suggest an edit" tampering against ground-truth data, diagnosing dynamic hour-based Map Pack ranking collapse, or tracking Speed-to-Lead call responsiveness telemetry (Module 10; operational execution and defense protocols are in `../../kirby-local-seo/SKILL.md` Module 6).
-- You are diagnosing page-level keyword cannibalization using trailing GSC impression telemetry and `site:` site-search validation (Module 10 §10.4).
+- You are diagnosing page-level keyword cannibalization using trailing GSC impression telemetry and `site:` site-search validation (Module 10 §10.4), or auditing Weak Branded Search vs. Backlink Ratios and bare `[Brand Name]` Page-1 SERP Slot Ownership / Homonym Collisions (Module 10 §10.5).
 - You are filtering GSC queries for the 1-Hour SEO Update across striking distance (Pos 5–20) and latent authority (Pos 20–50) to flag undertargeted queries (Module 5 §5.15; on-page execution is `../../kirby-aiseo-skill/SKILL.md` §2.19).
 - You are auditing impact of a Google spam update: 7-phase protocol (14-day before/after delta, `/locations/` vs `/services/` folder segmentation, rollout-window alignment, manual-action clearance, fix-timing gate) or classifying `Crawled - currently not indexed` as a differentiation deficit rather than an indexing bug (Module 11; remediation is `../../kirby-local-seo/SKILL.md` Module 7).
 - You are inside a Google core-update rollout (Nov 10 – ~Nov 24, 2026), deciding whether to touch pages, or investigating why a competitor surged: freeze rule, rollout+7-day baseline wait, Ahrefs Position History → Page Inspect → First Seen forensics with tracker caveats (Module 16).

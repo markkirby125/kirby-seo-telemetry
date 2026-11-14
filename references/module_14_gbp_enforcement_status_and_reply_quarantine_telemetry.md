@@ -29,7 +29,7 @@ Standard uptime monitors only check whether a Google Business Profile URL return
 1. **Detecting Silent "Restricted" Profiles**:
    - Because a **Restricted** profile remains visible in the Local Pack and Maps, business owners often go months without realizing their profile has been frozen.
    - **Telemetry Probe**: Monitor three compound signals weekly:
-     1. **Zero Incoming Review Velocity**: Review count remains completely flat for >21 days despite active post-ticket SMS/email solicitation flows.
+     1. **Zero Incoming Review Velocity & Trailing 90-Day Competitive Benchmark (Kasra Dash V3)**: Review count remains completely flat for >21 days despite active post-ticket SMS/email solicitation flows, or **trailing 90-day review velocity and recency (days since last review)** drops significantly behind the top-3 Map Pack competitors (which outweighs lifetime review count; see [`kirby-local-seo`](../../kirby-local-seo/SKILL.md) Module 3 §3.1.1 A & §3.13 B).
      2. **Public Review Submission Probe**: Inspect the public *"Write a review"* modal endpoint; Restricted profiles display a platform notice (*"Posting is currently turned off for this type of place"*) or silently drop 100% of external submissions.
      3. **Edit Rejection Rate**: Test-publishing a GBP Post or photo immediately transitions to *"Not Approved"* within 60 seconds.
    - When a Restricted state is detected, halt all automated review request campaigns immediately and route to [`kirby-local-seo`](../../kirby-local-seo/SKILL.md) Module 10 & Module 12 §12.4 for single-dossier policy appeal.
@@ -57,6 +57,6 @@ Google subjects all owner review responses to two-stage moderation: (1) an autom
 
 Profiles recovering from a suspension frequently experience partial review database detachment during reinstatement (returning live on Maps with 10–100% of historical reviews missing):
 
-* **Pre-Suspension Snapshot Baseline**: Maintain the weekly automated review count and review-ID ledger (extending Module 10 §10.2).
+* **Pre-Suspension Snapshot & Competitive Velocity Baseline**: Maintain the weekly automated review count, review-ID ledger, and **trailing 90-day review velocity/recency delta against the top-3 Map Pack competitors** (extending Module 10 §10.2 and [`kirby-local-seo`](../../kirby-local-seo/SKILL.md) Module 6 §6.6 — ensuring review acquisition is never paused upon hitting rank #1).
 * **Reinstatement Diff Check**: Within 24 hours of a profile returning to `LIVE` status, diff the current public `user_ratings_total` against the last pre-suspension snapshot.
 * If `current_reviews < snapshot_reviews` after 72 hours (allowing for standard shard re-propagation), trigger a single missing-review restoration ticket backed by the off-platform proof ledger in [`kirby-local-seo`](../../kirby-local-seo/SKILL.md) Module 10 §10.3.
